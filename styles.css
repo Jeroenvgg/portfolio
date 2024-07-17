@@ -5,12 +5,19 @@ body, h2, p, a, ul, li {
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 /* Navbar styling */
@@ -49,6 +56,7 @@ nav ul li a:hover {
 
 /* Main content styling */
 main {
+    flex: 1; /* Ensures main content takes up all available space */
     margin: 20px auto;
     padding: 0 20px;
     max-width: 800px; /* Adjust this value to control the width of the content area */
@@ -76,14 +84,27 @@ main h2 {
     text-decoration: underline;
 }
 
+.invisible-hr {
+    border: none;
+    background-color: transparent;
+    height: 1px; /* You can keep a small height if you want to keep the space */
+    margin: 0; /* Adjust margin if needed */
+}
+
+/* project styling */
+.projects img {
+    width: 200px;
+    height:200px;
+}
+
 /* Footer styling */
 footer {
     padding: 20px;
     background-color: #333;
     color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -91,15 +112,14 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     width: 100%;
     max-width: 800px;
 }
 
 .instagram-link {
     display: inline-flex;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
     text-decoration: none;
     color: #fff;
     font-size: 16px;
@@ -116,8 +136,14 @@ footer {
     margin-left: 8px;
 }
 
+#heart {
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
 .footer-text {
-    text-align: left;
+    text-align: center;
     flex-grow: 1;
 }
 
